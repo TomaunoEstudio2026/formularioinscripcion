@@ -175,18 +175,9 @@ const Form: React.FC = () => {
     loadCourses();
   }, []);
 
-const handleClose = () => {
-    window.location.href = '/';
-  };
-  
- {
-    // Al cerrar, reseteamos el curso a vacío para obligar a elegir de nuevo en la próxima
-    setFormData(initialFormState);
-    setIsSuccess(false);
-    setStatus(null);
-    setIsSubmitting(false);
-  };
-
+  const handleClose = () => {
+  window.location.href = '/';
+};
   const getWhatsAppUrl = () => {
     const phone = "5493764354522";
     const rawText = `🔴 *NUEVA PRE-INSCRIPCIÓN*\n` +
@@ -389,6 +380,7 @@ const handleClose = () => {
 };
 
 export default Form;
+
 
 
 
