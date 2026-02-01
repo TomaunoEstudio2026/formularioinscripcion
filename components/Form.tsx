@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { FormData, CourseOption } from '../types';
 import { submitToGoogleSheets, fetchCoursesFromSheet } from '../services/googleSheetsService';
@@ -175,9 +174,13 @@ const Form: React.FC = () => {
     loadCourses();
   }, []);
 
+  // --- FUNCIÓN UNIFICADA: REDIRECCIONA AL INICIO ---
+  // Esto recarga la página en la raíz, limpiando todo el estado.
   const handleClose = () => {
-  window.location.href = '/';
-};
+    window.location.href = '/';
+  };
+  // ---------------------------------------------------
+
   const getWhatsAppUrl = () => {
     const phone = "5493764354522";
     const rawText = `🔴 *NUEVA PRE-INSCRIPCIÓN*\n` +
@@ -268,7 +271,7 @@ const Form: React.FC = () => {
   if (isSuccess) {
     return (
       <div className="relative z-10 w-full max-w-md bg-black rounded-3xl border border-[#333] overflow-hidden text-center p-8 md:p-12 animate-in fade-in zoom-in duration-300 shadow-[0_0_50px_rgba(255,0,0,0.3)]">
-         <button onClick={handleClose} className="absolute top-4 right-4 size-8 flex items-center justify-center text-gray-500 hover:text-white hover:bg-[#333] rounded-full transition-all" title="Cerrar">
+         <button onClick={handleClose} className="absolute top-4 right-4 size-8 flex items-center justify-center text-gray-500 hover:text-white hover:bg-[#333] rounded-full transition-all" title="Cerrar y Volver">
             <span className="material-symbols-outlined font-bold">close</span>
          </button>
          <div className="size-20 bg-[#ff0000] rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_#ff0000] animate-bounce">
@@ -291,9 +294,11 @@ const Form: React.FC = () => {
 
   return (
     <div className="relative z-10 w-full max-w-2xl bg-black rounded-2xl shadow-2xl border border-[#222] overflow-hidden transition-all duration-500">
-      <button onClick={handleClose} className="absolute top-4 right-4 md:top-6 md:right-6 size-10 flex items-center justify-center text-gray-500 hover:text-white hover:bg-[#222] rounded-full transition-all z-20" title="Cerrar / Limpiar">
+      {/* --- ESTE ES EL BOTÓN DE LA CRUZ (CLOSE) --- */}
+      <button onClick={handleClose} className="absolute top-4 right-4 md:top-6 md:right-6 size-10 flex items-center justify-center text-gray-500 hover:text-white hover:bg-[#222] rounded-full transition-all z-20" title="Cerrar y Volver">
         <span className="material-symbols-outlined text-2xl font-bold">close</span>
       </button>
+      {/* ------------------------------------------- */}
 
       <div className="p-6 md:p-10">
         <div className="flex flex-col items-center mb-8">
@@ -380,7 +385,3 @@ const Form: React.FC = () => {
 };
 
 export default Form;
-
-
-
-
