@@ -177,7 +177,7 @@ const Form: React.FC = () => {
   
   // ---------------------------------------------------
 const handleClose = () => {
-    window.history.back();
+   window.location.href = 'https://formularioinscripcion.vercel.app';
   };
   const getWhatsAppUrl = () => {
     const phone = "5493764354522";
@@ -383,4 +383,5 @@ const handleClose = () => {
 };
 
 export default Form;
+
 
