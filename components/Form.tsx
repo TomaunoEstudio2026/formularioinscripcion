@@ -174,9 +174,11 @@ const Form: React.FC = () => {
   useEffect(() => {
     loadCourses();
   }, []);
+
 const handleClose = () => {
-    window.history.back();
+    window.location.href = '/';
   };
+  
  {
     // Al cerrar, reseteamos el curso a vacío para obligar a elegir de nuevo en la próxima
     setFormData(initialFormState);
@@ -387,5 +389,6 @@ const handleClose = () => {
 };
 
 export default Form;
+
 
 
