@@ -174,13 +174,11 @@ const Form: React.FC = () => {
     loadCourses();
   }, []);
 
-  // --- FUNCIÓN UNIFICADA: REDIRECCIONA AL INICIO ---
-  // Esto recarga la página en la raíz, limpiando todo el estado.
-  const handleClose = () => {
-    window.location.href = '/';
-  };
+  
   // ---------------------------------------------------
-
+const handleClose = () => {
+    window.history.back();
+  };
   const getWhatsAppUrl = () => {
     const phone = "5493764354522";
     const rawText = `🔴 *NUEVA PRE-INSCRIPCIÓN*\n` +
@@ -385,3 +383,4 @@ const Form: React.FC = () => {
 };
 
 export default Form;
+
