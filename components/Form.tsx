@@ -177,7 +177,7 @@ const Form: React.FC = () => {
 const handleClose = () => {
     window.history.back();
   };
-  const handleClose = () => {
+ {
     // Al cerrar, reseteamos el curso a vacío para obligar a elegir de nuevo en la próxima
     setFormData(initialFormState);
     setIsSuccess(false);
@@ -387,4 +387,5 @@ const handleClose = () => {
 };
 
 export default Form;
+
 
